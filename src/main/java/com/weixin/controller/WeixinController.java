@@ -5,6 +5,7 @@ import com.weixin.entity.WeixinContext;
 import com.weixin.util.SecurityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,7 +25,7 @@ public class WeixinController {
      nonce 	随机数
      echostr 	随机字符串
      */
-    @RequestMapping("/init")
+    @RequestMapping(value="/wget", method= RequestMethod.GET)
     public void init(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String signature =  request.getParameter("signature");
         String timestamp = request.getParameter("timestamp");
@@ -44,6 +45,11 @@ public class WeixinController {
         if (shal.equals(signature)) {
             response.getWriter().println(echostr);
         }
+
+    }
+
+    @RequestMapping(value = "/wget", method = RequestMethod.POST)
+    public void getInfo(HttpServletRequest request, HttpServletResponse response) {
 
     }
 

@@ -90,7 +90,7 @@
     <bean id="tenderReleaseTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="refreshaccessToken" />
         <!--每一个小时刷新一次-->
-        <property name="cronExpression" value="0 0 0/1 * * ?" />
+        <property name="cronExpression" value="0 0/1 * * * ?" />
     </bean>
 
     <!-- quartz持久化存储  -->

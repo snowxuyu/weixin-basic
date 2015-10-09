@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by snow on 2015/8/23.
+ * SHA1加密转换
  */
 public class SecurityUtils {
 
